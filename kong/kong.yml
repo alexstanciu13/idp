@@ -1,0 +1,26 @@
+_format_version: "2.1"
+_transform: true
+
+services:
+  - name: auth-server
+    url: http://auth-server:6001/auth
+    routes:
+      - name: auth-server-route
+        paths: 
+          - /auth/*
+        methods:
+          - POST
+          - GET
+          - DELETE
+
+  - name: business-service
+    url: http://business-service:4002/business
+    routes:
+      - name: business-service-route
+        paths: 
+          - /business/*
+        methods:
+          - POST
+          - GET
+          - DELETE
+          - PUT
